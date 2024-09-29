@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #87CEEB; /* Niebieskie niebo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(10, 50px); /* 10 kolumn */
+    grid-template-rows: repeat(10, 50px); /* 10 wierszy */
+    gap: 5px;
+    margin: 20px auto;
+    position: relative; /* Pozycjonowanie dla gracza */
+}
+
+.block {
+    width: 50px;
+    height: 50px;
+    background-color: #8B4513; /* Kolor bloku (brązowy) */
+    border: 1px solid #654321; /* Ciemniejsza krawędź */
+    cursor: pointer;
+}
+
+.player {
+    width: 50px;
+    height: 50px;
+    background-image: url('images/player.png');
+    background-size: cover;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.arrow-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arrow-controls > div {
+    display: flex;
+}
+
+.arrow-controls button {
+    width: 50px; /* Przyciski strzałek mają stałą szerokość */
+    height: 50px; /* Przyciski strzałek mają stałą wysokość */
+    font-size: 24px; /* Powiększ tekst w przyciskach strzałek */
+}
+
+#message {
+    margin-top: 10px;
+}
+
+#inventory {
+    margin-top: 20px;
+}
+
+/* Dostosowania dla urządzeń mobilnych */
+.mobile .controls {
+    flex-direction: column; /* Ustaw kontrolki w kolumnie */
+}
+
+.mobile button {
+    width: 100%; /* Przyciski zajmują całą szerokość */
+    margin: 5px 0; /* Odstęp między przyciskami */
+}
+
+/* Dostosowania dla komputerów */
+.desktop .controls {
+    display: flex; /* Ustaw kontrolki w wierszu */
+}
+
+.desktop button {
+    width: auto; /* Domyślny rozmiar przycisków */
+}

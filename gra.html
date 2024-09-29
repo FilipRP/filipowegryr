@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blokowy Budowniczy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Blokowy Budowniczy!</h1>
+        <div id="game-board" class="game-board"></div>
+        <div class="controls" id="controls">
+            <button id="addBlock">Dodaj Blok</button>
+            <button id="clearBoard">Wyczyść Planszę</button>
+            <button id="mineBlock">Kop Blok</button>
+            <div class="arrow-controls">
+                <button id="upArrow">⬆️</button>
+                <div>
+                    <button id="leftArrow">⬅️</button>
+                    <button id="rightArrow">➡️</button>
+                </div>
+                <button id="downArrow">⬇️</button>
+            </div>
+        </div>
+        <div id="message"></div>
+        <div id="inventory">
+            <h2>Ekspozycja:</h2>
+            <p id="inventory-text"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Funkcja do wykrywania urządzenia
+        function detectDevice() {
+            const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+            return isMobile;
+        }
+
+        // Ustaw styl w zależności od urządzenia
+        function setupInterface() {
+            if (detectDevice()) {
+                // Użytkownik jest na telefonie
+                document.body.classList.add("mobile");
+            } else {
+                // Użytkownik jest na komputerze
+                document.body.classList.add("desktop");
+            }
+        }
+
+        // Wywołaj funkcję
+        setupInterface();
+    </script>
+</body>
+</html>
